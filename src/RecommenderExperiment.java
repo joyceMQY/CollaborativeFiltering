@@ -71,13 +71,13 @@ public class RecommenderExperiment {
 	}
 	
 	public void recommendAll(int n) {
-		for(int i = 2; i < 3; i ++) {
+		for(int i = 3; i < 4; i ++) {
 			String filename = FILE_NAME[i];
 			int[][] params = PARAM_SET[i];
 			for(int j = 0; j < 10; j ++) {
 				int id = params[j][0];
 				int num = params[j][1];
-				String[] output = generateOutputFileNames(filename, j, n);
+				String[] output = generateOutputFileNames(filename, j + 1, n);
 				Recommender.runRecommender1(filename, id, num, output[0]);
 				Recommender.runRecommender2(filename, id, num, output[1]);
 				Recommender.runRecommender3(filename, id, num, output[2]);
